@@ -1,0 +1,490 @@
+﻿/* This stylesheet contains themes, colors, & styles based from United Branding Center.  See the brand styles here: https://scene.zeplin.io/project/5c86a231a1202f046e7adfe0  */
+
+/* Primary Colors ( Buttons, Toolbars, Navigation, Text, Inputs, Body text ) */
+$united-white-1: rgba(255, 255, 255, .75);
+$united-blue: #0033A0;
+$rhapsody-blue: #0C2350;
+$atlantic-amethyst: #6244BB;
+$atlantic-amethyst-rgba: rgb(98, 68, 187);
+$runaway-gray: #D4D4D0;
+
+/* Secondary Colors ( Buttons, Toolbars, Navigation, Text, Inputs, Body text ) */
+$steel-blue: #006080;
+$platinum-gray: #7C878E;
+$premium-purple: #572C5F;
+$sky-blue: #69B3E7;
+$pacific-blue: #00B2A9;
+$baby-blue: #16c7ff;
+
+/* Tertiary Colors ( Only if needed ) */
+$champagne: #CEB888;
+$warm-gray: #796E65;
+$background: #E6E6E6;
+/* Support Colors ( Accent colors for Notifications & Warning Messages ) */
+$spirit-gold: #FFC658;
+$green: #1B7742;
+$alert-red: #D50032;
+$basic-economy: #F16321;
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Extra Bold';
+    src: url('../fonts/OpenSans-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Semi-bold';
+    src: url('../fonts/OpenSans-SemiBold.ttf');
+}
+
+/*Font Weights*/
+$bold: 700;
+$normal: 500;
+
+/* Media query break points */
+$breakpoint-tablet: 768px;
+$desktop-md: 1040px;
+$desktop-lg: 1400px;
+$desktop-full: 1980px;
+
+html body {
+    font-family: 'Open Sans Regular', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+/* Buttons */
+.brand-confirm-button {
+    background-color: $atlantic-amethyst;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px;
+    width: 200px;
+    border: none;
+    height: 3rem;
+    font-size: 1.3rem;
+    transition: color .25s ease;
+    margin-right: 2rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 28px;
+
+    &[hidden] {
+        visibility: hidden;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: .5;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        color: $united-white-1;
+    }
+
+    @media ( max-width: $breakpoint-tablet ) {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+.brand-default-button {
+    background-color: $united-white-1;
+    border-radius: 4px;
+    color: $atlantic-amethyst;
+    box-shadow: 1px 1px 1px 1px;
+    width: 200px;
+    height: 2.8rem;
+    font-size: 1.3rem;
+    border: none;
+    transition: color .25s ease;
+    margin-right: 2rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 28px;
+
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: .5;
+
+        &:hover {
+            color: $atlantic-amethyst;
+        }
+    }
+
+    &:hover {
+        color: rgba(98, 68, 187, .75);
+    }
+
+    @media ( max-width: $breakpoint-tablet ) {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+.brand-grid-button {
+    background-color: $united-white-1;
+    border-radius: 4px;
+    color: $atlantic-amethyst;
+    box-shadow: 1px 1px 1px 1px;
+    width: 100px;
+    height: 2.8rem;
+    font-size: 1.3rem;
+    border: none;
+    transition: color .25s ease;
+    margin-right: 2rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 28px;
+
+
+    &:hover {
+        color: rgba(98, 68, 187, .75);
+    }
+
+    @media ( max-width: $breakpoint-tablet ) {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Top toolbar */
+.brand-top-toolbar {
+    background-color: $rhapsody-blue;
+    display: flex;
+    min-width: 600px;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+
+    .united-logo {
+        height: 40px;
+        width: 210px;
+        margin: .7rem .5rem;
+    }
+
+    .navbar-collapse {
+        flex: auto;
+    }
+
+    .brand-right-corner-options {
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+        display: flex;
+        color: #fff;
+
+        .user-identifier {
+            font-size: 1.3rem;
+            line-height: 30px;
+            margin-right: 2rem;
+
+            .glyphicon-user {
+                font-size: 1.6rem;
+                margin-right: 0.7rem;
+                margin-top: -0.3rem;
+                vertical-align: middle;
+            }
+
+            span:first-child {
+                font-weight: $bold;
+            }
+        }
+
+        .icon-container {
+            min-width: 65px;
+            font-size: 2rem;
+
+            .log-out-icon,
+            .help-icon {
+                vertical-align: middle;
+                margin-right: 1rem;
+                transition: .2s color ease;
+                color: #fff;
+
+                &:hover {
+                    color: #b8bfce;
+                }
+            }
+        }
+    }
+}
+
+.brand-tabs {
+    border: none;
+    min-width: 334px;
+
+    li {
+        min-width: 100px;
+        text-align: center;
+        margin-bottom: -2px;
+        border-right: 2px solid #fff;
+        transition: .1s margin-bottom ease;
+        height: 37px;
+
+        a {
+            border: none !important; /* override bootstrap style */
+            border-radius: 0;
+            margin: 0;
+            color: #fff;
+            background-color: $rhapsody-blue;
+            transition: .1s all linear;
+            font-size: 1.2rem;
+            font-weight: 700;
+
+            &:hover {
+                color: $united-white-1;
+                background-color: $rhapsody-blue;
+            }
+        }
+
+        &.active {
+            border-top: 2px solid $rhapsody-blue;
+
+            a {
+                color: $rhapsody-blue;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.brand-table {
+    color: $rhapsody-blue;
+    width: 100%;
+    margin-bottom: 2rem;
+    transition: all .5s ease;
+    opacity: 1;
+
+    &.table-loading {
+        opacity: .5;
+        transition: all .5s ease;
+    }
+
+    thead {
+        tr {
+            th {
+                text-align: center;
+                border-bottom: 3px solid $rhapsody-blue;
+                position: relative;
+                &:after {
+                    position: absolute;
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+    tbody {
+        font-size: 1.3rem;
+
+        tr {
+            td {
+                border-right: 1px solid gainsboro;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            td:first-child {
+                border-left: 1px solid gainsboro;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid gainsboro;
+            }
+
+            &:nth-of-type(odd) {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+}
+
+.brand-panel-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 2rem;
+
+    &:first-child {
+        margin-top: 2rem;
+    }
+
+    .brand-panel-container { // for nested panels
+        .brand-panel-header {
+            margin: 0 1.5rem !important;
+        }
+
+        .brand-panel {
+            margin-top: 0;
+
+            .brand-row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+    }
+
+    label {
+        font-weight: 600;
+        color: $rhapsody-blue;
+        font-size: 1.1rem;
+
+        &.check-option {
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+    }
+
+    .brand-panel {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        .brand-panel-header {
+            margin: 0 3rem;
+        }
+
+        .brand-row {
+            margin-top: .5rem;
+
+            .form-control {
+                height: 2.4rem;
+                padding: 1px 10px;
+                font-size: 1.2rem;
+                box-shadow: none;
+            }
+
+            .input-group-addon {
+                padding: 3px 12px;
+            }
+
+            .button-container {
+                position: relative;
+                bottom: -20px;
+            }
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .brand-title {
+        font-size: 1.4rem;
+        font-family: 'Open Sans Bold';
+        color: $rhapsody-blue;
+    }
+
+    h4 {
+        &.brand-sub-title {
+            font-size: 1.4rem;
+            font-family: 'Open Sans Bold';
+            color: $rhapsody-blue;
+        }
+    }
+
+    h5 {
+        &.brand-sub-title {
+            font-size: 1.25rem;
+            font-family: 'Open Sans Bold';
+            color: $rhapsody-blue;
+        }
+    }
+
+    input[type=radio] {
+        margin-right: 1rem;
+        vertical-align: middle;
+        margin-top: 0;
+    }
+}
+
+/*Below styles used for collabsible panel*/
+.brand-collapse-panel {
+    color: #fff;
+    background-color: $rhapsody-blue;
+    text-align: left;
+    font-size: 1.4rem;
+    font-family: 'Open Sans Bold';
+    padding: 1rem;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#accordion {
+    margin-bottom: 2rem;
+
+    div > .brand-row {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        height: auto;
+    }
+
+    div > .collapse-content {
+        padding: 0 1rem;
+        position: relative;
+    }
+}
+
+.brand-panel-header .accordion-toggle h4 {
+
+    &:after {
+        /* symbol for "opening" panels */
+        font-family: 'jdFontAwesome';
+        content: "\f068";
+        float: right;
+        overflow: no-display;
+    }
+}
+
+.brand-panel-header .accordion-toggle.collapsed h4:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067";
+}
+
+a.accordion-toggle {
+    text-decoration: none;
+}
+/*End of styles used for collabsible panel*/
+
+.brand-sub-title {
+    font-size: 1.4rem;
+    font-family: 'Open Sans Bold';
+    color: $rhapsody-blue;
+    text-transform: capitalize;
+}
+
+.brand-buttons-container {
+    text-align: left;
+    margin: 2rem 1.5rem 1rem;
+}
